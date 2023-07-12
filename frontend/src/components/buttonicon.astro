@@ -1,0 +1,8 @@
+---
+import { Icon } from "astro-icon";
+const { icon, disabled } = Astro.props;
+---
+
+<button disabled={disabled} class=`h-8 w-8 ${disabled ? "bg-emerald-200" : "bg-emerald-400"} p-2 rounded-md`
+    ><Icon name={icon} /></button
+>

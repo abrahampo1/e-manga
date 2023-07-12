@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^25.2.0"
+  },
+  "dependencies": {
+    "@electron/rebuild": "^3.2.13",
+    "detect-usb": "^2.0.0",
+    "mangadex-full-api": "^5.12.1",
+    "usb": "^2.9.0"
+  }
+}

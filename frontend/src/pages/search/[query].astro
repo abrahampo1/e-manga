@@ -1,0 +1,10 @@
+---
+const { query } = Astro.params;
+import Layout from "../../layout.astro";
+import MangaSearch from "../../components/mangaSearch";
+---
+
+<Layout>
+    <h1 class="text-4xl font-semibold">Search Results</h1>
+    <MangaSearch query={query} client:load />
+</Layout>

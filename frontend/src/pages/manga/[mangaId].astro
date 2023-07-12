@@ -1,0 +1,11 @@
+---
+
+import Layout from "../../layout.astro";
+import MangaHome from "../../components/mangaHome"
+const { mangaId } = Astro.params;
+
+---
+
+<Layout>
+    <MangaHome id={mangaId} client:load/>
+</Layout>

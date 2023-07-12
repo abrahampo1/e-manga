@@ -1,0 +1,49 @@
+---
+const { query } = Astro.params;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>e-Manga</title>
+    </head>
+    <body>
+        <div
+            class="p-2 border-red-400 h-12 absolute top-0 left-0 right-0 flex space-x-4 items-center"
+        >
+            <a href="/"><p>e-Manga</p></a>
+            <input
+                placeholder="Search on Mangadex"
+                value={query}
+                id="search"
+                class="outline-none"
+            />
+        </div>
+        <div
+            class="p-2 absolute top-12 left-0 right-0 bottom-0 border-green-300"
+        >
+            <slot />
+        </div>
+    </body>
+</html>
+<script is:inline>
+let search = document.getElementById("search");
+
+search.addEventListener("change", (e) => {
+    console.log(e);
+    location.replace("/search/" + e.target.value);
+});
+</script>
+<script>
+    import db from "./api/db";
+    async function CheckUser() {
+        await db.read();
+        if (!db.data.mangadex) {
+            location.replace("/login");
+        }
+    }
+    CheckUser();
+</script>
